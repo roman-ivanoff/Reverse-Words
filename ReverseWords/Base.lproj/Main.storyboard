@@ -1,24 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2o-Gf-2rO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="1xh-G3-8fV">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="d2o-Gf-2rO" customClass="ViewController" customModule="iOS_task1_reverseWords" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zA8-oi-N0J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reverse Words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgw-ud-6zf">
+                                <rect key="frame" x="16" y="196" width="382" height="40"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="34"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application will reverse your words. Please type text below " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FP-ze-kki">
+                                <rect key="frame" x="34" y="252" width="346" height="40"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59954268099999997" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-r2-WWb">
+                                <rect key="frame" x="16" y="332" width="382" height="34"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFildEditingChanged:" destination="d2o-Gf-2rO" eventType="editingChanged" id="9yX-DQ-IXB"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CO-QH-Ctl" customClass="ReverseButton" customModule="iOS_task1_reverseWords" customModuleProvider="target">
+                                <rect key="frame" x="16" y="742" width="382" height="54"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="17" maxX="0.0" maxY="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Reverse">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="reverseAction:" destination="d2o-Gf-2rO" eventType="touchUpInside" id="oj5-15-LBW"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7N-6J-SVA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Reverse Words" id="Nxt-hj-huR"/>
+                                </items>
+                                <navigationBarAppearance key="standardAppearance">
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </navigationBarAppearance>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-rp-nHh">
+                                <rect key="frame" x="16" y="390" width="382" height="35"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-s4-OIN">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="35"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIX-SG-0nF">
+                                                <rect key="frame" x="0.0" y="0.0" width="58" height="35"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-hO-ayY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="35"/>
+                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="24"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="xL0-hO-ayY" firstAttribute="leading" secondItem="BIX-SG-0nF" secondAttribute="leading" id="52m-ac-TVU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xL0-hO-ayY" secondAttribute="trailing" id="HEN-KI-XQH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xL0-hO-ayY" secondAttribute="bottom" id="Obd-pe-IhT"/>
+                                                    <constraint firstItem="xL0-hO-ayY" firstAttribute="top" secondItem="BIX-SG-0nF" secondAttribute="top" id="ZIo-yC-9oW"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="BIX-SG-0nF" firstAttribute="height" secondItem="DHq-s4-OIN" secondAttribute="height" id="1yd-ef-FPH"/>
+                                            <constraint firstItem="BIX-SG-0nF" firstAttribute="leading" secondItem="DHq-s4-OIN" secondAttribute="leading" id="5uK-Tw-ro3"/>
+                                            <constraint firstAttribute="trailing" secondItem="BIX-SG-0nF" secondAttribute="trailing" id="9KW-va-xhA"/>
+                                            <constraint firstItem="BIX-SG-0nF" firstAttribute="width" secondItem="DHq-s4-OIN" secondAttribute="width" priority="250" id="9gP-PQ-fhw"/>
+                                            <constraint firstItem="BIX-SG-0nF" firstAttribute="top" secondItem="DHq-s4-OIN" secondAttribute="top" id="ZO0-nG-Udg"/>
+                                            <constraint firstAttribute="bottom" secondItem="BIX-SG-0nF" secondAttribute="bottom" id="nci-7W-25s"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DHq-s4-OIN" firstAttribute="leading" secondItem="KVX-rp-nHh" secondAttribute="leading" id="J4G-Ny-Zp4"/>
+                                    <constraint firstItem="DHq-s4-OIN" firstAttribute="top" secondItem="KVX-rp-nHh" secondAttribute="top" id="PKK-Hk-ccE"/>
+                                    <constraint firstAttribute="bottom" secondItem="DHq-s4-OIN" secondAttribute="bottom" id="R3B-KX-tjw"/>
+                                    <constraint firstAttribute="height" constant="35" id="SGh-ai-ePp"/>
+                                    <constraint firstAttribute="trailing" secondItem="DHq-s4-OIN" secondAttribute="trailing" id="hNL-oL-c7l"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Np-MQ-SJ5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="Bgw-ud-6zf" secondAttribute="trailing" constant="16" id="5vA-0g-O5Z"/>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="KVX-rp-nHh" secondAttribute="trailing" constant="16" id="9u2-rD-jJM"/>
+                            <constraint firstItem="0FP-ze-kki" firstAttribute="top" secondItem="Bgw-ud-6zf" secondAttribute="bottom" constant="16" id="BnV-LQ-0G0"/>
+                            <constraint firstItem="gHg-r2-WWb" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="D7F-Sg-7fv"/>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="8CO-QH-Ctl" secondAttribute="trailing" constant="16" id="F82-8q-U6Q"/>
+                            <constraint firstItem="Bgw-ud-6zf" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="GID-Wf-YWw"/>
+                            <constraint firstItem="0FP-ze-kki" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="34" id="HON-ut-6Ux"/>
+                            <constraint firstAttribute="trailing" secondItem="0FP-ze-kki" secondAttribute="trailing" constant="34" id="HhP-lK-ISc"/>
+                            <constraint firstItem="gHg-r2-WWb" firstAttribute="top" secondItem="0FP-ze-kki" secondAttribute="bottom" constant="40" id="QH7-Ug-XwE"/>
+                            <constraint firstItem="KVX-rp-nHh" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="V5B-wN-6r7"/>
+                            <constraint firstItem="KVX-rp-nHh" firstAttribute="top" secondItem="gHg-r2-WWb" secondAttribute="bottom" constant="24" id="apJ-YH-oKL"/>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="gHg-r2-WWb" secondAttribute="trailing" constant="16" id="iMA-Cx-3Ap"/>
+                            <constraint firstItem="o7N-6J-SVA" firstAttribute="trailing" secondItem="0Np-MQ-SJ5" secondAttribute="trailing" id="nsI-nS-fEa"/>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="bottom" secondItem="8CO-QH-Ctl" secondAttribute="bottom" constant="66" id="oWC-ci-I4b"/>
+                            <constraint firstItem="o7N-6J-SVA" firstAttribute="top" secondItem="0Np-MQ-SJ5" secondAttribute="top" id="rtg-Ej-o83"/>
+                            <constraint firstItem="Bgw-ud-6zf" firstAttribute="top" secondItem="0Np-MQ-SJ5" secondAttribute="top" constant="152" id="svI-nE-hBx"/>
+                            <constraint firstItem="8CO-QH-Ctl" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="wP9-hV-emD"/>
+                            <constraint firstItem="o7N-6J-SVA" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" id="z2w-L3-SML"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navBar" destination="o7N-6J-SVA" id="39x-Nm-sYo"/>
+                        <outlet property="resultLabel" destination="xL0-hO-ayY" id="J0I-IQ-gXk"/>
+                        <outlet property="reverseButton" destination="8CO-QH-Ctl" id="QrO-fD-KJI"/>
+                        <outlet property="reverseTextFielld" destination="gHg-r2-WWb" id="y7W-9S-etj"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLI-hD-r1l" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="60.9375"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="8CO-QH-Ctl">
+            <size key="intrinsicContentSize" width="61" height="54"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

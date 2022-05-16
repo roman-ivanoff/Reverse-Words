@@ -13,6 +13,10 @@
 		FDD65CED28327F100013730D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD65CEB28327F100013730D /* Main.storyboard */; };
 		FDD65CEF28327F120013730D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDD65CEE28327F120013730D /* Assets.xcassets */; };
 		FDD65CF228327F120013730D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD65CF028327F120013730D /* LaunchScreen.storyboard */; };
+		FDD65CFC28327F530013730D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD65CFA28327F530013730D /* Roboto-Regular.ttf */; };
+		FDD65CFD28327F530013730D /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD65CFB28327F530013730D /* Roboto-Bold.ttf */; };
+		FDD65D0028327FCD0013730D /* ReverseWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CFF28327FCD0013730D /* ReverseWords.swift */; };
+		FDD65D0428327FE80013730D /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65D0328327FE80013730D /* ReverseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		FDD65CEE28327F120013730D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDD65CF128327F120013730D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDD65CF328327F120013730D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDD65CFA28327F530013730D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		FDD65CFB28327F530013730D /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		FDD65CFF28327FCD0013730D /* ReverseWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWords.swift; sourceTree = "<group>"; };
+		FDD65D0328327FE80013730D /* ReverseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,9 @@
 		FDD65CE428327F100013730D /* ReverseWords */ = {
 			isa = PBXGroup;
 			children = (
+				FDD65D0228327FDB0013730D /* Views */,
+				FDD65CFE28327FBE0013730D /* Models */,
+				FDD65CF928327F2B0013730D /* fonts */,
 				FDD65CE528327F100013730D /* AppDelegate.swift */,
 				FDD65CE728327F100013730D /* SceneDelegate.swift */,
 				FDD65CE928327F100013730D /* ViewController.swift */,
@@ -65,6 +76,31 @@
 				FDD65CF328327F120013730D /* Info.plist */,
 			);
 			path = ReverseWords;
+			sourceTree = "<group>";
+		};
+		FDD65CF928327F2B0013730D /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FDD65CFB28327F530013730D /* Roboto-Bold.ttf */,
+				FDD65CFA28327F530013730D /* Roboto-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		FDD65CFE28327FBE0013730D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDD65CFF28327FCD0013730D /* ReverseWords.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FDD65D0228327FDB0013730D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDD65D0328327FE80013730D /* ReverseButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +163,8 @@
 			files = (
 				FDD65CF228327F120013730D /* LaunchScreen.storyboard in Resources */,
 				FDD65CEF28327F120013730D /* Assets.xcassets in Resources */,
+				FDD65CFD28327F530013730D /* Roboto-Bold.ttf in Resources */,
+				FDD65CFC28327F530013730D /* Roboto-Regular.ttf in Resources */,
 				FDD65CED28327F100013730D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD65D0028327FCD0013730D /* ReverseWords.swift in Sources */,
 				FDD65CEA28327F100013730D /* ViewController.swift in Sources */,
 				FDD65CE628327F100013730D /* AppDelegate.swift in Sources */,
 				FDD65CE828327F100013730D /* SceneDelegate.swift in Sources */,
+				FDD65D0428327FE80013730D /* ReverseButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +332,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,6 +360,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
