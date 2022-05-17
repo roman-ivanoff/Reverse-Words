@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD048C8D283402840052DEB0 /* UINavigationBar+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD048C8C283402840052DEB0 /* UINavigationBar+Configuration.swift */; };
+		FD048C8F283403310052DEB0 /* ReverseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD048C8E283403310052DEB0 /* ReverseTextField.swift */; };
 		FDD65CE628327F100013730D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CE528327F100013730D /* AppDelegate.swift */; };
 		FDD65CE828327F100013730D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CE728327F100013730D /* SceneDelegate.swift */; };
 		FDD65CEA28327F100013730D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CE928327F100013730D /* ViewController.swift */; };
@@ -15,11 +17,13 @@
 		FDD65CF228327F120013730D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD65CF028327F120013730D /* LaunchScreen.storyboard */; };
 		FDD65CFC28327F530013730D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD65CFA28327F530013730D /* Roboto-Regular.ttf */; };
 		FDD65CFD28327F530013730D /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDD65CFB28327F530013730D /* Roboto-Bold.ttf */; };
-		FDD65D0028327FCD0013730D /* ReverseWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CFF28327FCD0013730D /* ReverseWords.swift */; };
+		FDD65D0028327FCD0013730D /* ReversePhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CFF28327FCD0013730D /* ReversePhrase.swift */; };
 		FDD65D0428327FE80013730D /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65D0328327FE80013730D /* ReverseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD048C8C283402840052DEB0 /* UINavigationBar+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Configuration.swift"; sourceTree = "<group>"; };
+		FD048C8E283403310052DEB0 /* ReverseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseTextField.swift; sourceTree = "<group>"; };
 		FDD65CE228327F100013730D /* ReverseWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReverseWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD65CE528327F100013730D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD65CE728327F100013730D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +34,7 @@
 		FDD65CF328327F120013730D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDD65CFA28327F530013730D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		FDD65CFB28327F530013730D /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		FDD65CFF28327FCD0013730D /* ReverseWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWords.swift; sourceTree = "<group>"; };
+		FDD65CFF28327FCD0013730D /* ReversePhrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversePhrase.swift; sourceTree = "<group>"; };
 		FDD65D0328327FE80013730D /* ReverseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +94,7 @@
 		FDD65CFE28327FBE0013730D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FDD65CFF28327FCD0013730D /* ReverseWords.swift */,
+				FDD65CFF28327FCD0013730D /* ReversePhrase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				FDD65D0328327FE80013730D /* ReverseButton.swift */,
+				FD048C8C283402840052DEB0 /* UINavigationBar+Configuration.swift */,
+				FD048C8E283403310052DEB0 /* ReverseTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,10 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDD65D0028327FCD0013730D /* ReverseWords.swift in Sources */,
+				FD048C8F283403310052DEB0 /* ReverseTextField.swift in Sources */,
+				FDD65D0028327FCD0013730D /* ReversePhrase.swift in Sources */,
 				FDD65CEA28327F100013730D /* ViewController.swift in Sources */,
 				FDD65CE628327F100013730D /* AppDelegate.swift in Sources */,
 				FDD65CE828327F100013730D /* SceneDelegate.swift in Sources */,
+				FD048C8D283402840052DEB0 /* UINavigationBar+Configuration.swift in Sources */,
 				FDD65D0428327FE80013730D /* ReverseButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,7 @@
         <!--View Controller-->
         <scene sceneID="1xh-G3-8fV">
             <objects>
-                <viewController id="d2o-Gf-2rO" customClass="ViewController" customModule="iOS_task1_reverseWords" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d2o-Gf-2rO" customClass="ViewController" customModule="ReverseWords" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zA8-oi-N0J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,15 +36,15 @@
                                 <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59954268099999997" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-r2-WWb">
-                                <rect key="frame" x="16" y="332" width="382" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-r2-WWb" customClass="ReverseTextField" customModule="ReverseWords" customModuleProvider="target">
+                                <rect key="frame" x="16" y="332" width="382" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textFildEditingChanged:" destination="d2o-Gf-2rO" eventType="editingChanged" id="9yX-DQ-IXB"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CO-QH-Ctl" customClass="ReverseButton" customModule="iOS_task1_reverseWords" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CO-QH-Ctl" customClass="ReverseButton" customModule="ReverseWords" customModuleProvider="target">
                                 <rect key="frame" x="16" y="742" width="382" height="54"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
@@ -70,7 +70,7 @@
                                 </navigationBarAppearance>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-rp-nHh">
-                                <rect key="frame" x="16" y="390" width="382" height="35"/>
+                                <rect key="frame" x="16" y="377.5" width="382" height="35"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-s4-OIN">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="35"/>

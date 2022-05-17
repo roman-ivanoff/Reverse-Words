@@ -3,9 +3,11 @@ import UIKit
 @IBDesignable
 class ReverseButton: UIButton {
 
-    let clear = "Clear"
-    let reserve = "Reverse"
-    var isReversed = false
+    var isReversed = false {
+        didSet {
+            !isReversed ? setTitle("Reverse", for: .normal) : setTitle("Clear", for: .normal)
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,18 +19,18 @@ class ReverseButton: UIButton {
     }
 
     public func disableButton() {
-        self.isUserInteractionEnabled = false
-        self.alpha = 0.6
+        isUserInteractionEnabled = false
+        alpha = 0.6
     }
 
     public func enableButton() {
-        self.isUserInteractionEnabled = true
-        self.alpha = 1.0
+        isUserInteractionEnabled = true
+        alpha = 1.0
     }
 
     private func setup() {
-        self.disableButton()
-        self.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 17)!
-        self.layer.cornerRadius = 10.0
+        disableButton()
+        titleLabel?.font = UIFont(name: "Roboto-Regular", size: 17)!
+        layer.cornerRadius = 10.0
     }
 }
