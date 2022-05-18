@@ -69,8 +69,15 @@
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </navigationBarAppearance>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxN-Gr-hoe" customClass="LineView" customModule="ReverseWords" customModuleProvider="target">
+                                <rect key="frame" x="16" y="372.5" width="382" height="1"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="4XG-b0-pj6"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-rp-nHh">
-                                <rect key="frame" x="16" y="377.5" width="382" height="35"/>
+                                <rect key="frame" x="16" y="398" width="382" height="35"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-s4-OIN">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="35"/>
@@ -124,12 +131,15 @@
                             <constraint firstItem="Bgw-ud-6zf" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="GID-Wf-YWw"/>
                             <constraint firstItem="0FP-ze-kki" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="34" id="HON-ut-6Ux"/>
                             <constraint firstAttribute="trailing" secondItem="0FP-ze-kki" secondAttribute="trailing" constant="34" id="HhP-lK-ISc"/>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="pxN-Gr-hoe" secondAttribute="trailing" constant="16" id="LyD-kO-Nwy"/>
                             <constraint firstItem="gHg-r2-WWb" firstAttribute="top" secondItem="0FP-ze-kki" secondAttribute="bottom" constant="40" id="QH7-Ug-XwE"/>
                             <constraint firstItem="KVX-rp-nHh" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="V5B-wN-6r7"/>
-                            <constraint firstItem="KVX-rp-nHh" firstAttribute="top" secondItem="gHg-r2-WWb" secondAttribute="bottom" constant="24" id="apJ-YH-oKL"/>
+                            <constraint firstItem="pxN-Gr-hoe" firstAttribute="top" secondItem="gHg-r2-WWb" secondAttribute="bottom" constant="19" id="asH-gf-ri9"/>
+                            <constraint firstItem="KVX-rp-nHh" firstAttribute="top" secondItem="pxN-Gr-hoe" secondAttribute="bottom" constant="24.5" id="d8M-DW-90N"/>
                             <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="gHg-r2-WWb" secondAttribute="trailing" constant="16" id="iMA-Cx-3Ap"/>
                             <constraint firstItem="o7N-6J-SVA" firstAttribute="trailing" secondItem="0Np-MQ-SJ5" secondAttribute="trailing" id="nsI-nS-fEa"/>
                             <constraint firstItem="0Np-MQ-SJ5" firstAttribute="bottom" secondItem="8CO-QH-Ctl" secondAttribute="bottom" constant="66" id="oWC-ci-I4b"/>
+                            <constraint firstItem="pxN-Gr-hoe" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="okW-nX-ar7"/>
                             <constraint firstItem="o7N-6J-SVA" firstAttribute="top" secondItem="0Np-MQ-SJ5" secondAttribute="top" id="rtg-Ej-o83"/>
                             <constraint firstItem="Bgw-ud-6zf" firstAttribute="top" secondItem="0Np-MQ-SJ5" secondAttribute="top" constant="152" id="svI-nE-hBx"/>
                             <constraint firstItem="8CO-QH-Ctl" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="wP9-hV-emD"/>
@@ -137,10 +147,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lineView" destination="pxN-Gr-hoe" id="9xU-bh-ZOH"/>
                         <outlet property="navBar" destination="o7N-6J-SVA" id="39x-Nm-sYo"/>
                         <outlet property="resultLabel" destination="xL0-hO-ayY" id="J0I-IQ-gXk"/>
                         <outlet property="reverseButton" destination="8CO-QH-Ctl" id="QrO-fD-KJI"/>
-                        <outlet property="reverseTextFielld" destination="gHg-r2-WWb" id="y7W-9S-etj"/>
+                        <outlet property="reverseTextField" destination="gHg-r2-WWb" id="y7W-9S-etj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLI-hD-r1l" sceneMemberID="firstResponder"/>
@@ -148,11 +159,6 @@
             <point key="canvasLocation" x="128.98550724637681" y="60.9375"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="8CO-QH-Ctl">
-            <size key="intrinsicContentSize" width="61" height="54"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

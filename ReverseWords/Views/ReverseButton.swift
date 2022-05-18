@@ -1,16 +1,11 @@
 import UIKit
 
-@IBDesignable
 class ReverseButton: UIButton {
 
     var isReversed = false {
         didSet {
-            !isReversed ? setTitle("Reverse", for: .normal) : setTitle("Clear", for: .normal)
+            setTitle(isReversed ? "Clear" : "Reverse", for: .normal)
         }
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
     }
 
     required init?(coder: NSCoder) {

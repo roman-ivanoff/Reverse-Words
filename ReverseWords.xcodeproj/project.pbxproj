@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FD048C8D283402840052DEB0 /* UINavigationBar+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD048C8C283402840052DEB0 /* UINavigationBar+Configuration.swift */; };
 		FD048C8F283403310052DEB0 /* ReverseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD048C8E283403310052DEB0 /* ReverseTextField.swift */; };
+		FDA8147328356DF80003A0BB /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8147228356DF80003A0BB /* LineView.swift */; };
+		FDA8147628356E6B0003A0BB /* ViewController+Delegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8147528356E6B0003A0BB /* ViewController+Delegation.swift */; };
 		FDD65CE628327F100013730D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CE528327F100013730D /* AppDelegate.swift */; };
 		FDD65CE828327F100013730D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CE728327F100013730D /* SceneDelegate.swift */; };
 		FDD65CEA28327F100013730D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD65CE928327F100013730D /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		FD048C8C283402840052DEB0 /* UINavigationBar+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Configuration.swift"; sourceTree = "<group>"; };
 		FD048C8E283403310052DEB0 /* ReverseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseTextField.swift; sourceTree = "<group>"; };
+		FDA8147228356DF80003A0BB /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		FDA8147528356E6B0003A0BB /* ViewController+Delegation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Delegation.swift"; sourceTree = "<group>"; };
 		FDD65CE228327F100013730D /* ReverseWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReverseWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD65CE528327F100013730D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD65CE728327F100013730D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FDA8147428356E540003A0BB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDD65CE928327F100013730D /* ViewController.swift */,
+				FDA8147528356E6B0003A0BB /* ViewController+Delegation.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		FDD65CD928327F100013730D = {
 			isa = PBXGroup;
 			children = (
@@ -68,12 +81,12 @@
 		FDD65CE428327F100013730D /* ReverseWords */ = {
 			isa = PBXGroup;
 			children = (
+				FDA8147428356E540003A0BB /* Controllers */,
 				FDD65D0228327FDB0013730D /* Views */,
 				FDD65CFE28327FBE0013730D /* Models */,
 				FDD65CF928327F2B0013730D /* fonts */,
 				FDD65CE528327F100013730D /* AppDelegate.swift */,
 				FDD65CE728327F100013730D /* SceneDelegate.swift */,
-				FDD65CE928327F100013730D /* ViewController.swift */,
 				FDD65CEB28327F100013730D /* Main.storyboard */,
 				FDD65CEE28327F120013730D /* Assets.xcassets */,
 				FDD65CF028327F120013730D /* LaunchScreen.storyboard */,
@@ -105,6 +118,7 @@
 				FDD65D0328327FE80013730D /* ReverseButton.swift */,
 				FD048C8C283402840052DEB0 /* UINavigationBar+Configuration.swift */,
 				FD048C8E283403310052DEB0 /* ReverseTextField.swift */,
+				FDA8147228356DF80003A0BB /* LineView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,9 +197,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD048C8F283403310052DEB0 /* ReverseTextField.swift in Sources */,
+				FDA8147628356E6B0003A0BB /* ViewController+Delegation.swift in Sources */,
 				FDD65D0028327FCD0013730D /* ReversePhrase.swift in Sources */,
 				FDD65CEA28327F100013730D /* ViewController.swift in Sources */,
 				FDD65CE628327F100013730D /* AppDelegate.swift in Sources */,
+				FDA8147328356DF80003A0BB /* LineView.swift in Sources */,
 				FDD65CE828327F100013730D /* SceneDelegate.swift in Sources */,
 				FD048C8D283402840052DEB0 /* UINavigationBar+Configuration.swift in Sources */,
 				FDD65D0428327FE80013730D /* ReverseButton.swift in Sources */,

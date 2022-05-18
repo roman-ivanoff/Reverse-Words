@@ -3,46 +3,46 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var reverseButton: ReverseButton!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var reverseTextField: ReverseTextField!
+    @IBOutlet weak var lineView: LineView!
     @IBOutlet weak var navBar: UINavigationBar! {
         didSet {
             navBar.hideNavBarLine()
         }
     }
-    @IBOutlet weak var reverseTextFielld: ReverseTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        reverseTextField.delegate = self
     }
 
     @IBAction func reverseAction(_ sender: UIButton) {
-        if !reverseButton.isReversed {
-            resultLabel.text = ReversePhrase.reverse(
-                phrase: reverseTextFielld.text!.trimmingCharacters(in: .whitespacesAndNewlines))
-            resultLabel.isHidden = false
-            reverseTextFielld.isActive = false
-            reverseButton.isReversed = true
-        } else {
+        if reverseButton.isReversed {
             reverseButton.isReversed = false
             resultLabel.isHidden = true
-            reverseTextFielld.text = ""
-            reverseTextFielld.isActive = true
+            reverseTextField.text = ""
+            reverseTextField.isActive = true
+            lineView.isActive = true
             reverseButton.disableButton()
+        } else {
+            resultLabel.text = ReversePhrase.reverse(
+                phrase: reverseTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+            resultLabel.isHidden = false
+            reverseTextField.isActive = false
+            lineView.isActive = false
+            reverseButton.isReversed = true
         }
     }
 
     @IBAction func textFildEditingChanged(_ sender: UITextField) {
-        reverseTextFielld.isActive = true
+        reverseTextField.isActive = true
+        lineView.isActive = true
         if sender.text?.count ?? 0 > 0 {
             reverseButton.enableButton()
         } else {
             reverseButton.disableButton()
         }
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-
-        return true
     }
 
 }
