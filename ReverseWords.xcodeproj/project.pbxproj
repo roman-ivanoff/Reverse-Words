@@ -90,11 +90,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD41153C28395E7600D1EB35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FDA8147528356E6B0003A0BB /* ViewController+Delegation.swift */,
+				FD048C8C283402840052DEB0 /* UINavigationBar+Configuration.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FD41153D28395E9100D1EB35 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDD65CE528327F100013730D /* AppDelegate.swift */,
+				FDD65CE728327F100013730D /* SceneDelegate.swift */,
+				FDD65CEE28327F120013730D /* Assets.xcassets */,
+				FDD65CF028327F120013730D /* LaunchScreen.storyboard */,
+				FDD65CF328327F120013730D /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FDA8147428356E540003A0BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FDD65CE928327F100013730D /* ViewController.swift */,
-				FDA8147528356E6B0003A0BB /* ViewController+Delegation.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,27 +158,24 @@
 		FDD65CE428327F100013730D /* ReverseWords */ = {
 			isa = PBXGroup;
 			children = (
+				FD41153D28395E9100D1EB35 /* Supporting Files */,
+				FD41153C28395E7600D1EB35 /* Extensions */,
 				FDA8147428356E540003A0BB /* Controllers */,
-				FDD65D0228327FDB0013730D /* Views */,
+				FDD65D0228327FDB0013730D /* CustomUIElements */,
 				FDD65CFE28327FBE0013730D /* Models */,
-				FDD65CF928327F2B0013730D /* fonts */,
-				FDD65CE528327F100013730D /* AppDelegate.swift */,
-				FDD65CE728327F100013730D /* SceneDelegate.swift */,
+				FDD65CF928327F2B0013730D /* Fonts */,
 				FDD65CEB28327F100013730D /* Main.storyboard */,
-				FDD65CEE28327F120013730D /* Assets.xcassets */,
-				FDD65CF028327F120013730D /* LaunchScreen.storyboard */,
-				FDD65CF328327F120013730D /* Info.plist */,
 			);
 			path = ReverseWords;
 			sourceTree = "<group>";
 		};
-		FDD65CF928327F2B0013730D /* fonts */ = {
+		FDD65CF928327F2B0013730D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				FDD65CFB28327F530013730D /* Roboto-Bold.ttf */,
 				FDD65CFA28327F530013730D /* Roboto-Regular.ttf */,
 			);
-			path = fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FDD65CFE28327FBE0013730D /* Models */ = {
@@ -169,15 +186,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FDD65D0228327FDB0013730D /* Views */ = {
+		FDD65D0228327FDB0013730D /* CustomUIElements */ = {
 			isa = PBXGroup;
 			children = (
 				FDD65D0328327FE80013730D /* ReverseButton.swift */,
-				FD048C8C283402840052DEB0 /* UINavigationBar+Configuration.swift */,
 				FD048C8E283403310052DEB0 /* ReverseTextField.swift */,
 				FDA8147228356DF80003A0BB /* LineView.swift */,
 			);
-			path = Views;
+			path = CustomUIElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,7 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ReverseWords/Info.plist;
+				INFOPLIST_FILE = "ReverseWords/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -592,7 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ReverseWords/Info.plist;
+				INFOPLIST_FILE = "ReverseWords/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
