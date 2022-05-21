@@ -47,22 +47,6 @@
                                     <action selector="textFildEditingChanged:" destination="d2o-Gf-2rO" eventType="editingChanged" id="9yX-DQ-IXB"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CO-QH-Ctl" customClass="ReverseButton" customModule="ReverseWords" customModuleProvider="target">
-                                <rect key="frame" x="16" y="742" width="382" height="54"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="reverseButton"/>
-                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="17" maxX="0.0" maxY="17"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Reverse">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="reverseAction:" destination="d2o-Gf-2rO" eventType="touchUpInside" id="oj5-15-LBW"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7N-6J-SVA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,16 +57,8 @@
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </navigationBarAppearance>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxN-Gr-hoe" customClass="LineView" customModule="ReverseWords" customModuleProvider="target">
-                                <rect key="frame" x="16" y="372.5" width="382" height="1"/>
-                                <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="lineView"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="4XG-b0-pj6"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-rp-nHh">
-                                <rect key="frame" x="16" y="398" width="382" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-rp-nHh">
+                                <rect key="frame" x="16" y="585" width="382" height="35"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-s4-OIN">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="35"/>
@@ -133,30 +109,21 @@
                             <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="KVX-rp-nHh" secondAttribute="trailing" constant="16" id="9u2-rD-jJM"/>
                             <constraint firstItem="0FP-ze-kki" firstAttribute="top" secondItem="Bgw-ud-6zf" secondAttribute="bottom" constant="16" id="BnV-LQ-0G0"/>
                             <constraint firstItem="gHg-r2-WWb" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="D7F-Sg-7fv"/>
-                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="8CO-QH-Ctl" secondAttribute="trailing" constant="16" id="F82-8q-U6Q"/>
                             <constraint firstItem="Bgw-ud-6zf" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="GID-Wf-YWw"/>
                             <constraint firstItem="0FP-ze-kki" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="34" id="HON-ut-6Ux"/>
                             <constraint firstAttribute="trailing" secondItem="0FP-ze-kki" secondAttribute="trailing" constant="34" id="HhP-lK-ISc"/>
-                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="pxN-Gr-hoe" secondAttribute="trailing" constant="16" id="LyD-kO-Nwy"/>
                             <constraint firstItem="gHg-r2-WWb" firstAttribute="top" secondItem="0FP-ze-kki" secondAttribute="bottom" constant="40" id="QH7-Ug-XwE"/>
                             <constraint firstItem="KVX-rp-nHh" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="V5B-wN-6r7"/>
-                            <constraint firstItem="pxN-Gr-hoe" firstAttribute="top" secondItem="gHg-r2-WWb" secondAttribute="bottom" constant="19" id="asH-gf-ri9"/>
-                            <constraint firstItem="KVX-rp-nHh" firstAttribute="top" secondItem="pxN-Gr-hoe" secondAttribute="bottom" constant="24.5" id="d8M-DW-90N"/>
                             <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="gHg-r2-WWb" secondAttribute="trailing" constant="16" id="iMA-Cx-3Ap"/>
                             <constraint firstItem="o7N-6J-SVA" firstAttribute="trailing" secondItem="0Np-MQ-SJ5" secondAttribute="trailing" id="nsI-nS-fEa"/>
-                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="bottom" secondItem="8CO-QH-Ctl" secondAttribute="bottom" constant="66" id="oWC-ci-I4b"/>
-                            <constraint firstItem="pxN-Gr-hoe" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="okW-nX-ar7"/>
                             <constraint firstItem="o7N-6J-SVA" firstAttribute="top" secondItem="0Np-MQ-SJ5" secondAttribute="top" id="rtg-Ej-o83"/>
                             <constraint firstItem="Bgw-ud-6zf" firstAttribute="top" secondItem="0Np-MQ-SJ5" secondAttribute="top" constant="152" id="svI-nE-hBx"/>
-                            <constraint firstItem="8CO-QH-Ctl" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="wP9-hV-emD"/>
                             <constraint firstItem="o7N-6J-SVA" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" id="z2w-L3-SML"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lineView" destination="pxN-Gr-hoe" id="9xU-bh-ZOH"/>
                         <outlet property="navBar" destination="o7N-6J-SVA" id="39x-Nm-sYo"/>
                         <outlet property="resultLabel" destination="xL0-hO-ayY" id="J0I-IQ-gXk"/>
-                        <outlet property="reverseButton" destination="8CO-QH-Ctl" id="QrO-fD-KJI"/>
                         <outlet property="reverseTextField" destination="gHg-r2-WWb" id="y7W-9S-etj"/>
                     </connections>
                 </viewController>
