@@ -3,48 +3,70 @@ import XCTest
 
 class ReverseWordsTests: XCTestCase {
 
-    func testCorrectReversePhrase() {
-        let phrase = "Test string"
-        let expectedResult = "tseT gnirts"
+    var sut: ReversePhrase!
 
-        let result = ReversePhrase.reverse(phrase: phrase)
-
-        XCTAssertEqual(result, expectedResult)
+    override func setUp() {
+        sut = ReversePhrase()
     }
 
-    func testCorrectWithEmptyInput() {
-        let phrase = ""
-        let expectedResult = ""
-
-        let result = ReversePhrase.reverse(phrase: phrase)
-
-        XCTAssertEqual(result, expectedResult)
+    override func tearDown() {
+        sut = nil
     }
 
-    func testCorrectWithSpacesInput() {
-        let phrase = "  "
-        let expectedResult = ""
-
-        let result = ReversePhrase.reverse(phrase: phrase)
-
-        XCTAssertEqual(result, expectedResult)
+    func test_ReversePhrase_emptyString() {
+        XCTAssert(sut.reverse(phrase: "").isEmpty)
     }
 
-    func testCorrectWithSingleWord() {
-        let phrase = "Charizard"
-        let expectedResult = "drazirahC"
-
-        let result = ReversePhrase.reverse(phrase: phrase)
-
-        XCTAssertEqual(result, expectedResult)
+    func test_reversePhrase_emptyString_emptyExclusion() {
+        XCTAssert(sut.reverse(phrase: "", ignoredCharacters: "").isEmpty)
     }
 
-    func testCorrectWithEmoji() {
-        let phrase = "🦊🦉🐥"
-        let expectedResult = "🐥🦉🦊"
+    func test_ReversePhrase_defaultExclusion() {
+        var string = "abcd efgh"
+        var expectedString = "dcba hgfe"
+        XCTAssertEqual(expectedString, sut.reverse(phrase: string))
 
-        let result = ReversePhrase.reverse(phrase: phrase)
+        string = "a1bcd efg!h"
+        expectedString = "d1cba hgf!e"
+        XCTAssertEqual(expectedString, sut.reverse(phrase: string))
+    }
 
-        XCTAssertEqual(result, expectedResult)
+    func test_reversePhrase_singleWordString() {
+        let string = "Avcd"
+        let expectedString = "dcvA"
+        XCTAssertEqual(expectedString, sut.reverse(phrase: string))
+    }
+
+    func test_reversePhrase_string_emptyExclusion() {
+        let string = "a1bcd efg!h"
+        let ignoredCharacters = ""
+        let expectedString = "dcb1a h!gfe"
+        XCTAssertEqual(expectedString, sut.reverse(phrase: string, ignoredCharacters: ignoredCharacters))
+    }
+
+    func test_reversePhrase_string_customExclusion() {
+        let string = "Batman cool 24/7"
+        let ignoredCharacters = "Batman"
+        let expectedString = "Batman looc 7/42"
+        XCTAssertEqual(expectedString, sut.reverse(phrase: string, ignoredCharacters: ignoredCharacters))
+    }
+
+    func test_reversePhrase_emptyString_customExclusion() {
+        XCTAssert(sut.reverse(phrase: "", ignoredCharacters: "123").isEmpty)
+    }
+
+    func test_reversePhrase_string_customExclusion_letters() {
+        let ignoredCharacters = "xl"
+        var string = "Batman cool 24/7"
+        var expectedString = "namtaB oocl 7/42"
+        XCTAssertEqual(expectedString, sut.reverse(phrase: string, ignoredCharacters: ignoredCharacters))
+
+        string = "abcd efgh"
+        expectedString = "dcba hgfe"
+        XCTAssertEqual(expectedString, sut.reverse(phrase: string, ignoredCharacters: ignoredCharacters))
+
+        string = "a1bcd efglh"
+        expectedString = "dcb1a hgfle"
+        XCTAssertEqual(expectedString, sut.reverse(phrase: string, ignoredCharacters: ignoredCharacters))
     }
 }

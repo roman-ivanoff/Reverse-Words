@@ -38,14 +38,11 @@
                                 <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59954268099999997" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-r2-WWb" customClass="ReverseTextField" customModule="ReverseWords" customModuleProvider="target">
-                                <rect key="frame" x="16" y="332" width="382" height="21.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to reverse" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHg-r2-WWb" customClass="ReverseTextField" customModule="ReverseWords" customModuleProvider="target">
+                                <rect key="frame" x="16" y="332" width="382" height="34"/>
                                 <accessibility key="accessibilityConfiguration" identifier="reverseTextField"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textFildEditingChanged:" destination="d2o-Gf-2rO" eventType="editingChanged" id="9yX-DQ-IXB"/>
-                                </connections>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7N-6J-SVA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -57,8 +54,8 @@
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </navigationBarAppearance>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-rp-nHh">
-                                <rect key="frame" x="16" y="585" width="382" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-rp-nHh">
+                                <rect key="frame" x="16" y="589" width="382" height="35"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHq-s4-OIN">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="35"/>
@@ -101,30 +98,106 @@
                                     <constraint firstAttribute="trailing" secondItem="DHq-s4-OIN" secondAttribute="trailing" id="hNL-oL-c7l"/>
                                 </constraints>
                             </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DkF-Bx-1Q8">
+                                <rect key="frame" x="16" y="391" width="382" height="32"/>
+                                <segments>
+                                    <segment title="Default"/>
+                                    <segment title="Custom"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchBeetweenExclusionRules:" destination="d2o-Gf-2rO" eventType="valueChanged" id="gaa-Aa-whL"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eex-Lr-rEp">
+                                <rect key="frame" x="16" y="447" width="382" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All characters except alphabetic symbols" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJI-5Z-NXk">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="allCharactersLabel"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="0KF-Um-0g9"/>
+                                    <constraint firstAttribute="bottom" secondItem="UJI-5Z-NXk" secondAttribute="bottom" id="CI7-iU-G3T"/>
+                                    <constraint firstAttribute="trailing" secondItem="UJI-5Z-NXk" secondAttribute="trailing" id="jIJ-Al-d8p"/>
+                                    <constraint firstItem="UJI-5Z-NXk" firstAttribute="leading" secondItem="Eex-Lr-rEp" secondAttribute="leading" id="nDr-dc-e21"/>
+                                    <constraint firstItem="UJI-5Z-NXk" firstAttribute="top" secondItem="Eex-Lr-rEp" secondAttribute="top" id="qxJ-RT-gpB"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-an-faf">
+                                <rect key="frame" x="16" y="447" width="382" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to ignore" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Qu-UD-vl3">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ignoreCharactersTextField"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2Qu-UD-vl3" secondAttribute="bottom" id="7F1-G3-27P"/>
+                                    <constraint firstItem="2Qu-UD-vl3" firstAttribute="top" secondItem="BYs-an-faf" secondAttribute="top" id="7e2-fh-kmb"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Qu-UD-vl3" secondAttribute="trailing" id="Jzu-cP-1c4"/>
+                                    <constraint firstItem="2Qu-UD-vl3" firstAttribute="leading" secondItem="BYs-an-faf" secondAttribute="leading" id="WVw-rS-5Li"/>
+                                    <constraint firstAttribute="height" constant="48" id="XfN-u0-gmU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnw-jd-B3D">
+                                <rect key="frame" x="161.5" y="520" width="91.5" height="44"/>
+                                <accessibility key="accessibilityConfiguration" identifier="resultButton"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Result">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="reverseAction:" destination="d2o-Gf-2rO" eventType="touchUpInside" id="v6p-Ua-RDh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Np-MQ-SJ5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Eex-Lr-rEp" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="5dm-Jm-HjU"/>
                             <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="Bgw-ud-6zf" secondAttribute="trailing" constant="16" id="5vA-0g-O5Z"/>
                             <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="KVX-rp-nHh" secondAttribute="trailing" constant="16" id="9u2-rD-jJM"/>
+                            <constraint firstItem="Wnw-jd-B3D" firstAttribute="top" secondItem="Eex-Lr-rEp" secondAttribute="bottom" constant="25" id="A0h-X5-zgt"/>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="DkF-Bx-1Q8" secondAttribute="trailing" constant="16" id="Ay4-PU-NtA"/>
                             <constraint firstItem="0FP-ze-kki" firstAttribute="top" secondItem="Bgw-ud-6zf" secondAttribute="bottom" constant="16" id="BnV-LQ-0G0"/>
                             <constraint firstItem="gHg-r2-WWb" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="D7F-Sg-7fv"/>
+                            <constraint firstItem="Eex-Lr-rEp" firstAttribute="top" secondItem="DkF-Bx-1Q8" secondAttribute="bottom" constant="25" id="EqA-kY-BFm"/>
                             <constraint firstItem="Bgw-ud-6zf" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="GID-Wf-YWw"/>
                             <constraint firstItem="0FP-ze-kki" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="34" id="HON-ut-6Ux"/>
                             <constraint firstAttribute="trailing" secondItem="0FP-ze-kki" secondAttribute="trailing" constant="34" id="HhP-lK-ISc"/>
+                            <constraint firstItem="Wnw-jd-B3D" firstAttribute="centerX" secondItem="zA8-oi-N0J" secondAttribute="centerX" id="Jbf-M0-6T2"/>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="BYs-an-faf" secondAttribute="trailing" constant="16" id="PRt-DO-Hxi"/>
+                            <constraint firstItem="BYs-an-faf" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="Pq0-XR-9xR"/>
                             <constraint firstItem="gHg-r2-WWb" firstAttribute="top" secondItem="0FP-ze-kki" secondAttribute="bottom" constant="40" id="QH7-Ug-XwE"/>
                             <constraint firstItem="KVX-rp-nHh" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="V5B-wN-6r7"/>
+                            <constraint firstItem="DkF-Bx-1Q8" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" constant="16" id="e8x-hi-oX1"/>
+                            <constraint firstItem="BYs-an-faf" firstAttribute="top" secondItem="DkF-Bx-1Q8" secondAttribute="bottom" constant="25" id="eAy-D8-sDC"/>
+                            <constraint firstItem="DkF-Bx-1Q8" firstAttribute="top" secondItem="gHg-r2-WWb" secondAttribute="bottom" constant="25" id="h0E-4C-W9n"/>
                             <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="gHg-r2-WWb" secondAttribute="trailing" constant="16" id="iMA-Cx-3Ap"/>
                             <constraint firstItem="o7N-6J-SVA" firstAttribute="trailing" secondItem="0Np-MQ-SJ5" secondAttribute="trailing" id="nsI-nS-fEa"/>
                             <constraint firstItem="o7N-6J-SVA" firstAttribute="top" secondItem="0Np-MQ-SJ5" secondAttribute="top" id="rtg-Ej-o83"/>
                             <constraint firstItem="Bgw-ud-6zf" firstAttribute="top" secondItem="0Np-MQ-SJ5" secondAttribute="top" constant="152" id="svI-nE-hBx"/>
+                            <constraint firstItem="0Np-MQ-SJ5" firstAttribute="trailing" secondItem="Eex-Lr-rEp" secondAttribute="trailing" constant="16" id="vOI-cK-MjB"/>
+                            <constraint firstItem="KVX-rp-nHh" firstAttribute="top" secondItem="Wnw-jd-B3D" secondAttribute="bottom" constant="25" id="ywV-6E-cQk"/>
                             <constraint firstItem="o7N-6J-SVA" firstAttribute="leading" secondItem="0Np-MQ-SJ5" secondAttribute="leading" id="z2w-L3-SML"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="charactersToIgnoreTextField" destination="2Qu-UD-vl3" id="PEe-4O-kHj"/>
                         <outlet property="navBar" destination="o7N-6J-SVA" id="39x-Nm-sYo"/>
                         <outlet property="resultLabel" destination="xL0-hO-ayY" id="J0I-IQ-gXk"/>
                         <outlet property="reverseTextField" destination="gHg-r2-WWb" id="y7W-9S-etj"/>
+                        <outlet property="segmentControl" destination="DkF-Bx-1Q8" id="iQj-Tt-Fon"/>
+                        <outlet property="viewWithLabel" destination="Eex-Lr-rEp" id="45s-cM-itV"/>
+                        <outlet property="viewWithTextField" destination="BYs-an-faf" id="VLE-LQ-k4p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLI-hD-r1l" sceneMemberID="firstResponder"/>
