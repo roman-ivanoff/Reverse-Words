@@ -16,7 +16,7 @@ class ReverseWordsUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["descriptionLabel"].exists)
         XCTAssertTrue(app.textFields["reverseTextField"].exists)
         XCTAssertFalse(app.staticTexts["resultLabel"].exists)
-        XCTAssertTrue(app.buttons["resultButton"].exists)
+        XCTAssertTrue(app.staticTexts["resultTitle"].exists)
         XCTAssertTrue(app.segmentedControls.element.exists)
         XCTAssertTrue(app.staticTexts["allCharactersLabel"].exists)
         XCTAssertFalse(app.textFields["ignoreCharactersTextField"].exists)
@@ -24,26 +24,7 @@ class ReverseWordsUITests: XCTestCase {
 
     func test_defaultExclusion() {
         enterStringInTextFieldById(phrase: "Batman cool 24/7", id: "reverseTextField")
-        var expectedResult = "namtaB looc 24/7"
-        app.buttons["resultButton"].tap()
-        // Check result
-        XCTAssertTrue(app.staticTexts["resultLabel"].exists)
-        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
-
-        // Clear input
-        clearTextField(id: "reverseTextField")
-        enterStringInTextFieldById(phrase: "abcd efgh", id: "reverseTextField")
-        expectedResult = "dcba hgfe"
-        app.buttons["resultButton"].tap()
-        // Check result
-        XCTAssertTrue(app.staticTexts["resultLabel"].exists)
-        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
-
-        // Clear input
-        clearTextField(id: "reverseTextField")
-        enterStringInTextFieldById(phrase: "a1bcd efg!h", id: "reverseTextField")
-        expectedResult = "d1cba hgf!e"
-        app.buttons["resultButton"].tap()
+        let expectedResult = "namtaB looc 24/7"
         // Check result
         XCTAssertTrue(app.staticTexts["resultLabel"].exists)
         XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
@@ -51,33 +32,14 @@ class ReverseWordsUITests: XCTestCase {
 
     func test_customExclusion_letters() {
         enterStringInTextFieldById(phrase: "Batman cool 24/7", id: "reverseTextField")
-        var expectedResult = "namtaB oocl 7/42"
+        let expectedResult = "namtaB oocl 7/42"
         // Select view with TextField
         app.segmentedControls.children(matching: .button).element(boundBy: 1).tap()
         enterStringInTextFieldById(phrase: "xl", id: "ignoreCharactersTextField")
-        app.buttons["resultButton"].tap()
+//        app.buttons["resultButton"].tap()
         // Check result
         XCTAssertTrue(app.staticTexts["resultLabel"].exists)
-        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
-
-        // Clear input
-        clearTextField(id: "reverseTextField")
-        enterStringInTextFieldById(phrase: "abcd efgh", id: "reverseTextField")
-        expectedResult = "dcba hgfe"
-        app.buttons["resultButton"].tap()
-        // Check result
-        XCTAssertTrue(app.staticTexts["resultLabel"].exists)
-        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
-
-        // Clear input
-        clearTextField(id: "reverseTextField")
-        enterStringInTextFieldById(phrase: "a1bcd efglh", id: "reverseTextField")
-        expectedResult = "dcb1a hgfle"
-        app.buttons["resultButton"].tap()
-        // Check result
-        XCTAssertTrue(app.staticTexts["resultLabel"].exists)
-        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
-    }
+        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)    }
 
     func test_customExclusion_digits() {
         enterStringInTextFieldById(phrase: "Batman cool 24/7", id: "reverseTextField")
@@ -85,7 +47,6 @@ class ReverseWordsUITests: XCTestCase {
         // Select view with TextField
         app.segmentedControls.children(matching: .button).element(boundBy: 1).tap()
         enterStringInTextFieldById(phrase: "1370", id: "ignoreCharactersTextField")
-        app.buttons["resultButton"].tap()
         // Check result
         XCTAssertTrue(app.staticTexts["resultLabel"].exists)
         XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
@@ -97,7 +58,6 @@ class ReverseWordsUITests: XCTestCase {
         // Select view with TextField
         app.segmentedControls.children(matching: .button).element(boundBy: 1).tap()
         enterStringInTextFieldById(phrase: "/", id: "ignoreCharactersTextField")
-        app.buttons["resultButton"].tap()
         // Check result
         XCTAssertTrue(app.staticTexts["resultLabel"].exists)
         XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
@@ -113,24 +73,29 @@ class ReverseWordsUITests: XCTestCase {
         XCTAssertTrue(app.textFields["ignoreCharactersTextField"].exists)
     }
 
-    func test_segmentedControlTap_hideResultLabel() {
-        enterStringInTextFieldById(phrase: "abcd", id: "reverseTextField")
-        app.buttons["resultButton"].tap()
+    func test_defaultExclusion_customExclusion() {
+        enterStringInTextFieldById(phrase: "Batman cool 24/7", id: "reverseTextField")
+        var expectedResult = "namtaB looc 24/7"
 
         XCTAssertTrue(app.staticTexts["resultLabel"].exists)
+        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
 
         app.segmentedControls.children(matching: .button).element(boundBy: 1).tap()
-
-        XCTAssertFalse(app.staticTexts["resultLabel"].exists)
-
-        enterStringInTextFieldById(phrase: "r", id: "ignoreCharactersTextField")
-        app.buttons["resultButton"].tap()
-
         XCTAssertTrue(app.staticTexts["resultLabel"].exists)
 
-        app.segmentedControls.children(matching: .button).element(boundBy: 0).tap()
+        enterStringInTextFieldById(phrase: "Batman", id: "ignoreCharactersTextField")
+        expectedResult = "Batman looc 7/42"
+        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
 
-        XCTAssertFalse(app.staticTexts["resultLabel"].exists)
+        app.segmentedControls.children(matching: .button).element(boundBy: 0).tap()
+        XCTAssertTrue(app.staticTexts["resultLabel"].exists)
+        expectedResult = "namtaB looc 24/7"
+        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
+
+        app.segmentedControls.children(matching: .button).element(boundBy: 1).tap()
+        XCTAssertTrue(app.staticTexts["resultLabel"].exists)
+        expectedResult = "Batman looc 7/42"
+        XCTAssertEqual(expectedResult, app.staticTexts.element(matching: .any, identifier: "resultLabel").label)
     }
 
     // Group repeating parts
